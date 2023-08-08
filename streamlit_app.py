@@ -8,28 +8,16 @@ password = '$2"5EVTtb,D3xUN'
 
 st.title(":clipboard: Process reporting")
 
-fields_to_keep = ['executionId', 'status', 'processName', 'executionDuration'] 
-
 def parse_xml_response(xml_response):
-
   root = ET.fromstring(xml_response)
-  
   records = []
   for result in root.findall('.//{http://api.platform.boomi.com/}result'):
-
     record = {}
-    
     for child in result:
       tag = child.tag.replace('{http://api.platform.boomi.com/}', '')  
-      
-      # Ne garder que les champs spécifiés
-      if tag in fields_to_keep:
-        record[tag] = child.text
-
+      record[tag] = child.text
     records.append(record)
-
   return records
-
 
 def get_data():
   url = 'https://api.boomi.com/api/rest/v1/trainingkhalidaitzi-K6LQT4/ExecutionRecord/query'
@@ -49,7 +37,6 @@ if __name__ == '__main__':
     <style>
       .st-bo {
         padding: 20px;  
-        margin-left: -300px;
       }
     </style>    
     """, unsafe_allow_html=True)
