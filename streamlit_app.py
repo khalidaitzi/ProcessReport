@@ -27,9 +27,7 @@ if __name__ == '__main__':
     records = parse_xml_response(data)
     df = pd.DataFrame(records)
     
-    # Create a two-column layout
-    col1, col2 = st.beta_columns(2)
+    # Add empty lines before the table to adjust its placement
+    st.write("\n\n\n")
     
-    # Adjust the placement of the table in the second column
-    with col2:
-        st.table(df)
+    st.table(df)
