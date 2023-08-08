@@ -7,7 +7,7 @@ password = '$2"5EVTtb,D3xUN'
 
 def get_data():
     url = 'https://api.boomi.com/api/rest/v1/trainingkhalidaitzi-K6LQT4/ExecutionRecord/query'
-    response = requests.post(url, auth=(username, password))
+    response = requests.post(url, auth=(username, password))  
     return response.text
 
 def parse_xml(xml):
