@@ -32,7 +32,7 @@ if __name__ == '__main__':
         """
         <style>
         .dataframe {
-            margin-left: 0;
+            margin-left: -100;
             margin-right: auto;
         }
         </style>
