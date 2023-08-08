@@ -37,10 +37,17 @@ if __name__ == '__main__':
     <style>
       .st-bo {
         padding: 20px;  
-        margin-left: -400px
+        margin-left: -400px;
+        .full-width-table th {
+                background-color: #f5f5f5;
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
       }
     </style>    
     """, unsafe_allow_html=True)
+
 
   # Render as full width table
   st.markdown(f'<div class="st-bo"><table class="full-width-table">{df.to_html(index=False)}</table></div>', unsafe_allow_html=True)
