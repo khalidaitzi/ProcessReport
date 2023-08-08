@@ -36,7 +36,8 @@ if __name__ == '__main__':
   st.markdown("""
     <style>
       .st-bo {
-        padding: 20px;  
+        padding: 20px; 
+        margin-left: -200px;
       }
     </style>    
     """, unsafe_allow_html=True)
