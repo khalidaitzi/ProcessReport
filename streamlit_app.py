@@ -33,7 +33,7 @@ if __name__ == '__main__':
         <style>
         .dataframe {
             margin-left: -100;
-            margin-right: auto;
+            margin-right: 100;
         }
         </style>
         """,
