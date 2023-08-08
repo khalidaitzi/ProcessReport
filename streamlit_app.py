@@ -26,4 +26,9 @@ if __name__ == '__main__':
     data = get_data()
     records = parse_xml_response(data)
     df = pd.DataFrame(records)
+    
+    # Set pandas display options to show the full table
+    pd.set_option('display.max_columns', None)
+    pd.set_option('display.expand_frame_repr', False)
+    
     st.table(df)
