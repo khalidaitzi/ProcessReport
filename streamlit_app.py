@@ -6,7 +6,7 @@ import xml.etree.ElementTree as ET
 username = 'ait-zi.khalid@ensam-casa.ma'
 password = '$2"5EVTtb,D3xUN'
 
-st.title(":bar_chart: Sales Dashboard")
+st.title(":bar_chart: Process reporting")
 
 def parse_xml_response(xml_response):
     root = ET.fromstring(xml_response)
