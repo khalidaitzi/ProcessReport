@@ -27,17 +27,7 @@ if __name__ == '__main__':
     records = parse_xml_response(data)
     df = pd.DataFrame(records)
     
-    # Set CSS styling to align the table to the left
-    st.markdown(
-        """
-        <style>
-        .dataframe {
-            margin-left: -100;
-            margin-right: 100;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
+    # Add empty lines before the table to adjust its placement
+    st.write("\n\n\n")
     
     st.table(df)
