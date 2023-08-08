@@ -37,7 +37,7 @@ if __name__ == '__main__':
     <style>
       .st-bo {
         padding: 20px; 
-        margin-left: -200px;
+        margin-left: -600px;
       }
     </style>    
     """, unsafe_allow_html=True)
