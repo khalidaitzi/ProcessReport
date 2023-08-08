@@ -27,8 +27,17 @@ if __name__ == '__main__':
     records = parse_xml_response(data)
     df = pd.DataFrame(records)
     
-    # Set pandas display options to show the full table
-    pd.set_option('display.max_columns', None)
-    pd.set_option('display.expand_frame_repr', False)
+    # Set CSS styling to align the table to the left
+    st.markdown(
+        """
+        <style>
+        .dataframe {
+            margin-left: 0;
+            margin-right: auto;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
     
     st.table(df)
