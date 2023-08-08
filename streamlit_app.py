@@ -26,8 +26,18 @@ if __name__ == '__main__':
     data = get_data()
     records = parse_xml_response(data)
     df = pd.DataFrame(records)
-    
-    # Add empty lines before the table to adjust its placement
-    st.write("\n\n\n")
-    
-    st.table(df)
+
+    # Apply CSS styling to the table
+    st.markdown(
+        """
+        <style>
+        .full-width-table {
+            width: 100%;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+    # Render the table with the CSS class
+    st.table(df.style.set_table_attributes("class='full-width-table'"))
