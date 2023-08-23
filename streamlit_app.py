@@ -3,8 +3,8 @@ import requests
 import pandas as pd
 import xml.etree.ElementTree as ET
 
-username = 'ait-zi.khalid@ensam-casa.ma'
-password = '$2"5EVTtb,D3xUN'
+username = '*************'
+password = '*************'
 
 # Set Streamlit theme
 st.set_page_config(
@@ -65,7 +65,7 @@ def parse_xml_response(xml_response):
     return records
 
 def get_data():
-    url = 'https://api.boomi.com/api/rest/v1/trainingkhalidaitzi-K6LQT4/ExecutionRecord/query'
+    url = 'https://api.boomi.com/api/rest/v1/*********************/ExecutionRecord/query'
     response = requests.post(url, auth=(username, password))
     return response.text
 
