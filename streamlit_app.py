@@ -50,7 +50,7 @@ if __name__ == '__main__':
 
 cw1, cw2 = st.columns((2.5, 1.7))
     
-    whdf = pd.read_excel('DataforMock.xlsx',sheet_name = 'WaitingHandovers')
+    whdf = pd.DataFrame(records)
       
     colourcode = []
                              
