@@ -47,10 +47,9 @@ if __name__ == '__main__':
         data=[go.Table(
             columnorder=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
             columnwidth=[30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30],
-            columnheight=[30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30],
             header=dict(
                 values=list(df.columns),
-                font=dict(size=12, color='white'),
+                font=dict(size=120, color='white'),
                 fill_color='#264653',
                 line_color='rgba(255,255,255,0.2)',
                 align=[ 'center'],
