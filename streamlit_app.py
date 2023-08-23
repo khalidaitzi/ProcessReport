@@ -52,7 +52,7 @@ custom_styles = """
     }
 </style>
 """
-
+st.title(":clipboard: Process reporting")
 def parse_xml_response(xml_response):
     root = ET.fromstring(xml_response)
     records = []
