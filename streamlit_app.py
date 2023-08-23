@@ -14,44 +14,47 @@ st.set_page_config(
 )
 
 # Define custom CSS styles
-custom_styles = """
-<style>
-    /* Remove table centering */
-    div.row-widget.stRadio > div {
-        flex-direction: row;
-    }
+ st.markdown(
+        """
+        <style>
+            /* Remove table centering */
+            div.row-widget.stRadio > div {
+                flex-direction: row;
+            }
 
-    /* Add padding and margin to table */
-    .dataframe {
-        padding: 20px;
-        margin-left: -400px;
-    }
+            /* Add padding and margin to table */
+            .dataframe {
+                padding: 20px;
+                margin-left: -400px;
+            }
 
-    /* Style table header */
-    .dataframe th {
-        background-color: #8684f0;
-        border: 2px solid #ddd;
-        padding: 10px;
-        text-align: left;
-    }
+            /* Style table header */
+            .dataframe th {
+                background-color: #f5f5f5;
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
 
-    /* Style table cells */
-    .dataframe td {
-        border: 1px solid #ddd;
-        padding: 8px;
-    }
+            /* Style table cells */
+            .dataframe td {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
 
-    /* Alternate row colors */
-    .dataframe tr:nth-child(even) {
-        background-color: #8684f0;
-    }
+            /* Alternate row colors */
+            .dataframe tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
 
-    /* Hover effect on rows */
-    .dataframe tr:hover {
-        background-color: #8684f0;
-    }
-</style>
-"""
+            /* Hover effect on rows */
+            .dataframe tr:hover {
+                background-color: #e6f7ff;
+            }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
 st.title(":clipboard: Process reporting")
 def parse_xml_response(xml_response):
     root = ET.fromstring(xml_response)
