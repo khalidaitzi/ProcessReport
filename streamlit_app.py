@@ -6,7 +6,52 @@ import xml.etree.ElementTree as ET
 username = 'ait-zi.khalid@ensam-casa.ma'
 password = '$2"5EVTtb,D3xUN'
 
-st.title(":clipboard: Process reporting")
+# Set Streamlit theme
+st.set_page_config(
+    page_title="Process reporting",
+    page_icon=":clipboard:",
+    layout="wide"
+)
+
+# Define custom CSS styles
+custom_styles = """
+<style>
+    /* Remove table centering */
+    div.row-widget.stRadio > div {
+        flex-direction: row;
+    }
+
+    /* Add padding and margin to table */
+    .dataframe {
+        padding: 20px;
+        margin-left: -400px;
+    }
+
+    /* Style table header */
+    .dataframe th {
+        background-color: #f5f5f5;
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    /* Style table cells */
+    .dataframe td {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    /* Alternate row colors */
+    .dataframe tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    /* Hover effect on rows */
+    .dataframe tr:hover {
+        background-color: #e6f7ff;
+    }
+</style>
+"""
 
 def parse_xml_response(xml_response):
     root = ET.fromstring(xml_response)
@@ -29,34 +74,8 @@ if __name__ == '__main__':
     records = parse_xml_response(data)
     df = pd.DataFrame(records)
 
-    # Remove table centering
-    st.markdown('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
+    # Apply custom styles
+    st.markdown(custom_styles, unsafe_allow_html=True)
 
-    # Add some padding 
-    st.markdown("""
-        <style>
-            .st-bo {
-                padding: 20px;
-                margin-left: -400px;
-            }
-            .full-width-table th {
-                background-color: #f5f5f5;
-                border: 1px solid #ddd;
-                padding: 8px;
-                text-align: left;
-            }
-            .full-width-table td {
-                border: 1px solid #ddd;
-                padding: 8px;
-            }
-            .full-width-table tr:nth-child(even) {
-                background-color: #f2f2f2;
-            }
-            .full-width-table tr:hover {
-                background-color: #e6f7ff;
-            }
-        </style>    
-        """, unsafe_allow_html=True)
-
-    # Render as full width table
-    st.markdown(f'<div class="st-bo"><table class="full-width-table">{df.to_html(index=False)}</table></div>', unsafe_allow_html=True)
+    # Render table
+    st.dataframe(df)
