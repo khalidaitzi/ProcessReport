@@ -29,7 +29,7 @@ custom_styles = """
 
     /* Style table header */
     .dataframe th {
-        background-color: #f5f5f5;
+        background-color: #8684f0;
         border: 1px solid #ddd;
         padding: 8px;
         text-align: left;
