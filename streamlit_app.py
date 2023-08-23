@@ -49,19 +49,19 @@ if __name__ == '__main__':
             columnwidth=[30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30],
             header=dict(
                 values=list(df.columns),
-                font=dict(size=120, color='white'),
+                font=dict(size=12, color='white'),
                 fill_color='#264653',
                 line_color='rgba(255,255,255,0.2)',
-                align=[ 'center'],
-                height=100
+                align=['center'],
+                height=60
             ),
             cells=dict(
                 values=[df[K].tolist() for K in df.columns], 
                 font=dict(size=12),
-                align=[ 'center'],
+                align=['center'],
                 fill_color=colourcode,
                 line_color='rgba(255,255,255,0.2)',
-                height=100
+                height=30
             )
         )]
     )
@@ -69,9 +69,22 @@ if __name__ == '__main__':
     fig.update_layout(
         title_font_color='#264653',
         title_x=0,
-        margin=dict(l=0, r=10, b=10, t=30),
+        margin=dict(l=100, r=100, b=10, t=30),
         height=600
     )
 
     cw1.plotly_chart(fig, use_container_width=True)
 
+    # Center the table on the page
+    table_style = """
+        <style>
+            table {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
+    """
+    st.markdown(table_style, unsafe_allow_html=True)
+
+    # Render as full-width table
+    st.table(df)
