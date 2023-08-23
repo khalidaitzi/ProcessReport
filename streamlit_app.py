@@ -7,8 +7,7 @@ password = '$2"5EVTtb,D3xUN'
 
 st.title(":clipboard: Process reporting")
 
-def parse_xml_response(xml_response):
-root = ET.fromstring(xml_response)
+def parse_xml_response(xml_response): root = ET.fromstring(xml_response)
 records = []
 for result in root.findall('.//{http://api.platform.boomi.com/}result'):
 record = {}
