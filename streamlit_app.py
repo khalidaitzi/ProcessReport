@@ -30,8 +30,8 @@ custom_styles = """
     /* Style table header */
     .dataframe th {
         background-color: #8684f0;
-        border: 1px solid #ddd;
-        padding: 8px;
+        border: 2px solid #ddd;
+        padding: 10px;
         text-align: left;
     }
 
@@ -43,12 +43,12 @@ custom_styles = """
 
     /* Alternate row colors */
     .dataframe tr:nth-child(even) {
-        background-color: #f2f2f2;
+        background-color: #8684f0;
     }
 
     /* Hover effect on rows */
     .dataframe tr:hover {
-        background-color: #e6f7ff;
+        background-color: #8684f0;
     }
 </style>
 """
