@@ -58,7 +58,7 @@ for i in range(0,15):
     
        
     fig = go.Figure(
-            data = [go.Table (columnorder = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15], columnwidth = [30,10,10,10,10,15,15,15,15,15],
+            data = [go.Table (columnorder = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15], columnwidth=[30, 10, 10, 10, 10, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15],
                 header = dict(
                  values = list(df.columns),
                  font=dict(size=12, color = 'white'),
