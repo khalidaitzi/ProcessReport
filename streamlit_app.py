@@ -49,15 +49,13 @@ if __name__ == '__main__':
     """, unsafe_allow_html=True)
 
 cw1, cw2 = st.columns((2.5, 1.7))
-    
-    whdf = pd.DataFrame(records)
       
     colourcode = []
                              
     for i in range(0,9):
-        colourcode.append(whdf['c'+str(i)].tolist())   
+        colourcode.append(df['c'+str(i)].tolist())   
     
-    whdf = whdf[['Hospital Attended ',	'Expected',	'Inbound ',	'Arrived ',	'Waiting',	'0 - 15 Mins',	'15 - 30 Mins ',	'30 - 60 Mins ',	'60 - 90 Mins',	'90 + Mins ',
+    df = df[['executionId', 'account', 'executionTime', 'status', 'executionType', 'processName', 'processId', 'atomName', 'atomId', 'inboundDocumentCount', 'inboundErrorDocumentCount', 'outboundDocumentCount', 'executionDuration', 'inboundDocumentSize', 'outboundDocumentSize', 'nodeId',
 ]]
     
        
