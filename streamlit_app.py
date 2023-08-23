@@ -49,8 +49,6 @@ text-align: left;
 
 cw1, cw2 = st.columns((2.5, 1.7))
 
-json
-Copy
 whdf = pd.DataFrame(records)
   
 colourcode = []
