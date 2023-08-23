@@ -54,7 +54,11 @@ if __name__ == '__main__':
     colourcode = []
 
     for i in range(0, 16):
-        colourcode.append(df['c'+str(i)].tolist())
+        column_name = 'c' + str(i)
+        if column_name in df.columns:
+            colourcode.append(df[column_name].tolist())
+        else:
+            st.warning(f"Column '{column_name}' does not exist in the DataFrame.")
 
     df = df[['executionId', 'account', 'executionTime', 'status', 'executionType', 'processName', 'processId', 'atomName', 'atomId', 'inboundDocumentCount', 'inboundErrorDocumentCount', 'outboundDocumentCount', 'executionDuration', 'inboundDocumentSize', 'outboundDocumentSize', 'nodeId']]
 
