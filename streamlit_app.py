@@ -50,37 +50,36 @@ if __name__ == '__main__':
 
   cw1, cw2 = st.columns((2.5, 1.7))
     
-    whdf = pd.DataFrame(records)
+  whdf = pd.DataFrame(records)
       
-    colourcode = []
+  colourcode = []
                              
-    for i in range(0,9):
-        colourcode.append(whdf['c'+str(i)].tolist())   
+  for i in range(0,9):
+      colourcode.append(whdf['c'+str(i)].tolist())   
     
-    whdf = whdf[['Hospital Attended ',	'Expected',	'Inbound ',	'Arrived ',	'Waiting',	'0 - 15 Mins',	'15 - 30 Mins ',	'30 - 60 Mins ',	'60 - 90 Mins',	'90 + Mins ',]]
+  whdf = whdf[['Hospital Attended ', 'Expected', 'Inbound ', 'Arrived ', 'Waiting', '0 - 15 Mins', '15 - 30 Mins ', '30 - 60 Mins ', '60 - 90 Mins', '90 + Mins ']]
 
-    fig = go.Figure(
-            data = [go.Table (columnorder = [0,1,2,3,4,5,6,7,8,9], columnwidth = [30,10,10,10,10,15,15,15,15,15],
-                header = dict(
-                 values = list(whdf.columns),
-                 font=dict(size=12, color = 'white'),
-                 fill_color = '#264653',
-                 line_color = 'rgba(255,255,255,0.2)',
-                 align = ['left','center'],
-                 #text wrapping
+  fig = go.Figure(
+          data=[go.Table(columnorder=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9], columnwidth=[30, 10, 10, 10, 10, 15, 15, 15, 15, 15],
+                header=dict(
+                 values=list(whdf.columns),
+                 font=dict(size=12, color='white'),
+                 fill_color='#264653',
+                 line_color='rgba(255,255,255,0.2)',
+                 align=['left', 'center'],
                  height=20
-                 )
-              , cells = dict(
-                  values = [whdf[K].tolist() for K in whdf.columns], 
+                 ),
+                cells=dict(
+                  values=[whdf[K].tolist() for K in whdf.columns], 
                   font=dict(size=12),
-                  align = ['left','center'],
-                  fill_color = colourcode,
-                  line_color = 'rgba(255,255,255,0.2)',
+                  align=['left', 'center'],
+                  fill_color=colourcode,
+                  line_color='rgba(255,255,255,0.2)',
                   height=20))])
-     
-    fig.update_layout(title_text="Current Waiting Handovers",title_font_color = '#264653',title_x=0,margin= dict(l=0,r=10,b=10,t=30), height=480)                                                           
-        
-    cw1.plotly_chart(fig, use_container_width=True)    
+
+  fig.update_layout(title_text="Current Waiting Handovers", title_font_color='#264653', title_x=0, margin=dict(l=0, r=10, b=10, t=30), height=480)                                                           
+
+  cw1.plotly_chart(fig, use_container_width=True)    
 
   # Render as full width table
   st.markdown(f'<div class="st-bo"><table class="full-width-table">{df.to_html(index=False)}</table></div>', unsafe_allow_html=True)
