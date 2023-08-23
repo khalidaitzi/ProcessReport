@@ -46,19 +46,19 @@ if __name__ == '__main__':
     fig = go.Figure(
         data=[go.Table(
             columnorder=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
-            columnwidth=[30, 10, 10, 10, 10, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15],
+            columnwidth=[100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
             header=dict(
                 values=list(df.columns),
                 font=dict(size=12, color='white'),
                 fill_color='#264653',
                 line_color='rgba(255,255,255,0.2)',
-                align=['left', 'center'],
+                align=[ 'center'],
                 height=100
             ),
             cells=dict(
                 values=[df[K].tolist() for K in df.columns], 
                 font=dict(size=12),
-                align=['left', 'center'],
+                align=[ 'center'],
                 fill_color=colourcode,
                 line_color='rgba(255,255,255,0.2)',
                 height=100
