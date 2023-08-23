@@ -30,25 +30,6 @@ if __name__ == '__main__':
     records = parse_xml_response(data)
     df = pd.DataFrame(records)
 
-    # Remove table centering
-    st.markdown('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
-
-    # Add some padding
-    st.markdown("""
-    <style>
-        .st-bo {
-            padding: 20px;
-            margin-left: -400px;
-        }
-        .full-width-table th {
-            background-color: #f5f5f5;
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-    </style>
-    """, unsafe_allow_html=True)
-
     cw1, cw2 = st.columns((2.5, 1.7))
 
     colourcode = []
@@ -95,5 +76,3 @@ if __name__ == '__main__':
 
     cw1.plotly_chart(fig, use_container_width=True)
 
-    # Render as full-width table
-    st.markdown(f'<div class="st-bo"><table class="full-width-table">{df.to_html(index=False)}</table></div>', unsafe_allow_html=True)
