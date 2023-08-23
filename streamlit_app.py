@@ -53,7 +53,7 @@ if __name__ == '__main__':
                 fill_color='#264653',
                 line_color='rgba(255,255,255,0.2)',
                 align=['left', 'center'],
-                height=20
+                height=100
             ),
             cells=dict(
                 values=[df[K].tolist() for K in df.columns], 
