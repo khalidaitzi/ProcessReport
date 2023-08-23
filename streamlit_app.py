@@ -49,8 +49,7 @@ if __name__ == '__main__':
     """, unsafe_allow_html=True)
 
 cw1, cw2 = st.columns((2.5, 1.7))
-      
-    colourcode = []                     
+                    
     for i in range(0,9):
         colourcode.append(df['c'+str(i)].tolist())   
     
