@@ -9,45 +9,54 @@ password = '$2"5EVTtb,D3xUN'
 st.title(":clipboard: Process reporting")
 
 def parse_xml_response(xml_response):
-  root = ET.fromstring(xml_response)
-  records = []
-  for result in root.findall('.//{http://api.platform.boomi.com/}result'):
-    record = {}
-    for child in result:
-      tag = child.tag.replace('{http://api.platform.boomi.com/}', '')  
-      record[tag] = child.text
-    records.append(record)
-  return records
+    root = ET.fromstring(xml_response)
+    records = []
+    for result in root.findall('.//{http://api.platform.boomi.com/}result'):
+        record = {}
+        for child in result:
+            tag = child.tag.replace('{http://api.platform.boomi.com/}', '')
+            record[tag] = child.text
+        records.append(record)
+    return records
 
 def get_data():
-  url = 'https://api.boomi.com/api/rest/v1/trainingkhalidaitzi-K6LQT4/ExecutionRecord/query'
-  response = requests.post(url, auth=(username, password))
-  return response.text
+    url = 'https://api.boomi.com/api/rest/v1/trainingkhalidaitzi-K6LQT4/ExecutionRecord/query'
+    response = requests.post(url, auth=(username, password))
+    return response.text
 
 if __name__ == '__main__':
-  data = get_data()
-  records = parse_xml_response(data)
-  df = pd.DataFrame(records)
-  
-  # Remove table centering
-  st.markdown('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
+    data = get_data()
+    records = parse_xml_response(data)
+    df = pd.DataFrame(records)
 
-  # Add some padding 
-  st.markdown("""
-    <style>
-      .st-bo {
-        padding: 20px;  
-        margin-left: -400px;
-        .full-width-table th {
+    # Remove table centering
+    st.markdown('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
+
+    # Add some padding 
+    st.markdown("""
+        <style>
+            .st-bo {
+                padding: 20px;
+                margin-left: -400px;
+            }
+            .full-width-table th {
                 background-color: #f5f5f5;
                 border: 1px solid #ddd;
                 padding: 8px;
                 text-align: left;
             }
-      }
-    </style>    
-    """, unsafe_allow_html=True)
+            .full-width-table td {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+            .full-width-table tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+            .full-width-table tr:hover {
+                background-color: #e6f7ff;
+            }
+        </style>    
+        """, unsafe_allow_html=True)
 
-
-  # Render as full width table
-  st.markdown(f'<div class="st-bo"><table class="full-width-table">{df.to_html(index=False)}</table></div>', unsafe_allow_html=True)
+    # Render as full width table
+    st.markdown(f'<div class="st-bo"><table class="full-width-table">{df.to_html(index=False)}</table></div>', unsafe_allow_html=True)
