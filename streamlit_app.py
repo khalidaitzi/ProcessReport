@@ -50,7 +50,7 @@ if __name__ == '__main__':
 
 cw1, cw2 = st.columns((2.5, 1.7))
                     
-    for i in range(0,9):
+for i in range(0,9):
         colourcode.append(df['c'+str(i)].tolist())   
     
     df = df[['executionId', 'account', 'executionTime', 'status', 'executionType', 'processName', 'processId', 'atomName', 'atomId', 'inboundDocumentCount', 'inboundErrorDocumentCount', 'outboundDocumentCount', 'executionDuration', 'inboundDocumentSize', 'outboundDocumentSize', 'nodeId',
