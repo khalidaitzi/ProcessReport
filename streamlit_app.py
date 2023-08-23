@@ -79,7 +79,7 @@ if __name__ == '__main__':
     table_style = """
         <style>
             table {
-                margin-left: auto;
+                margin-left: -100;
                 margin-right: auto;
             }
         </style>
