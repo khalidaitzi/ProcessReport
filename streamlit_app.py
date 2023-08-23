@@ -46,7 +46,7 @@ if __name__ == '__main__':
     fig = go.Figure(
         data=[go.Table(
             columnorder=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
-            columnwidth=[100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
+            columnwidth=[30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30],
             header=dict(
                 values=list(df.columns),
                 font=dict(size=12, color='white'),
