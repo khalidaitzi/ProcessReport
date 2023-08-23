@@ -61,7 +61,7 @@ if __name__ == '__main__':
                 align=['left', 'center'],
                 fill_color=colourcode,
                 line_color='rgba(255,255,255,0.2)',
-                height=20
+                height=100
             )
         )]
     )
